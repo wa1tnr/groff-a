@@ -1,0 +1,67 @@
+#!/bin/b__ash
+
+# edit the shebang to point to system bash shell
+
+# this script fragment just has snippets that are
+# not meant to make good sense.
+
+# remnants leftover from the working script.
+
+# omit to exec the script further:
+exit 0
+
+# Mon  8 Jul 03:55:50 UTC 2024
+# ref  https://pikchr.org/home/uv/gpic.pdf
+
+getkey() {
+}
+
+# - - - -   m a i n   - - - -
+
+getkey
+
+
+# probably works to line 37:
+
+gpic << _EOF__ >> gpic_sampler.groff
+.PS
+.defcolor NavyBlue rgb #13458b
+.defcolor SeddleBraun rgb #8b4513
+circle shaded "cornflowerblue" outline "black"
+circle shaded "green" outline "black"
+circle shaded "goldenrod" outline "black"
+circle shaded "NavyBlue" outline "black"
+circle shaded "SeddleBraun" outline "black"
+.PE
+_EOF__
+
+# unlikely to work or parse but no prediction:
+
+# .ms \m[pink] pagefill blue .ms \m[]
+# .defcolor pink rgb #FFC0CB
+# circle fill;move;circle fill 0.4;move;circle fill;
+# circle fill;move;circle fill 0.4;move;circle fill 0.9;
+# .ms DC .ms \m[];
+# .ms \m[pink]
+
+getkey
+
+groff -mpic gpic_sampler.groff > this.ps;  ps2pdf this.ps ; zathura this.pdf
+
+exit 0
+
+# end.
+
+# old edit remnants not in correct shell script fitness:
+
+.PE
+_EOF__
+
+getkey
+
+groff -mpic gpic_sampler.groff > this.ps;  ps2pdf this.ps ; zathura this.pdf
+
+exit 0
+
+# end.
+
